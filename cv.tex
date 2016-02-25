@@ -1,0 +1,128 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2011 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,roman]{moderncv}
+
+% moderncv themes
+%\moderncvtheme[blue]{casual}                  % optional argument are 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+\usepackage{amssymb,amsmath}
+
+% adjust the page margins
+\usepackage[scale=0.81]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}			 % if you want to change the width of the column with the dates
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+%\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% personal data
+\firstname{Martin}
+\familyname{Ukrop}
+\title{curriculum vit\ae}               % optional, remove the line if not wanted
+%\address{Novozámocká 63}{960 01 Zvolen, Slovakia}    % optional, remove the line if not wanted
+%\mobile{+421 908 222 224}                    % optional, remove the line if not wanted
+%\mobile{+420 776 659 464}                    % optional, remove the line if not wanted
+%\phone{phone (optional)}                      % optional, remove the line if not wanted
+\email{mukrop@mail.muni.cz}                % optional, remove the line if not wanted
+\extrainfo{GitHub: \href{https://github.com/mathius}{mathius}\\
+ORCID: \href{http://orcid.org/0000-0001-8110-8926}{0000-0001-8110-8926}\\
+IS MU: \href{http://is.muni.cz/person/374297}{374297}}
+%\fax{fax (optional)}                          % optional, remove the line if not wanted
+%\homepage{homepage (optional)}                % optional, remove the line if not wanted
+%\extrainfo{additional information (optional)} % optional, remove the line if not wanted
+%\photo[90pt][1pt]{profile_foto}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
+\quote{``Not everything that can be counted counts.\newline{} Not everything that counts can be counted.''\newline{} \scriptsize (William Bruce Cameron)}
+
+\usepackage[
+    backend=biber,      % use biber as backend instead of BiBTeX
+    style=authoryear,sorting=ydnt,
+	url=true,           % display urls in bibliography
+	hyperref=auto,      % detect hyperref and create links
+    firstinits=true,    % abbreviate first names to initials
+    maxbibnames=5,      % maxiumim number of authors before making 'et al.'
+    alldates=iso8601,   % set date format to ISO 8601
+]{biblatex}
+\addbibresource{cv.bib}
+
+\renewbibmacro*{date}{}
+\renewbibmacro*{date+extrayear}{}
+\renewbibmacro*{issue+date}{}
+\newcommand*{\bibyear}{}
+
+\defbibenvironment{bibliography}
+  {\list
+     {\iffieldequals{year}{\bibyear}
+        {}
+        {\printfield{year}%
+         \savefield{year}{\bibyear}}}
+     {\setlength{\topsep}{0pt}% layout parameters based on moderncvstyleclassic.sty
+      \setlength{\labelwidth}{\hintscolumnwidth}%
+      \setlength{\labelsep}{\separatorcolumnwidth}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \leftmargin\labelwidth%
+      \advance\leftmargin\labelsep}%
+      \sloppy\clubpenalty4000\widowpenalty4000}
+  {\endlist}
+  {\item}
+
+\usepackage[plainpages=false,   % get the page numbering correctly
+            pdfpagelabels,      % write arabic labels to all pages
+            unicode,           	% allow unicode characters in links
+            colorlinks=true,    % use colored links instead of boxed
+            linkcolor={color1},
+            urlcolor={color1}
+			]{hyperref}
+
+\begin{document}
+\maketitle
+
+\vspace{-0.5cm}
+\section{Education}
+\cventry{2013--now}{Masaryk University}{}{Brno, Czech Republic}{}{Field of study: FI BIT Information Technology Security\newline{}Master thesis: \href{http://is.muni.cz/th/374297/fi_m/?lang=en;id=239511}{\textit{Randomness analysis on authenticated encryption systems}}\newline{}Dean’s Award for final thesis and excellent academic performance}
+\cventry{2010--2013}{Masaryk University}{}{Brno, Czech Republic}{}{Field of study: FI PSZD Computer Systems and Data Processing\newline{}Bachelor thesis: \href{http://is.muni.cz/th/374297/fi_b/?lang=en;id=239511}{\textit{Usage of evolvable circuit for statistical testing of randomness}}\newline{}Dean’s Award for excellent academic performance}
+\cventry{2006--2010}{Secondary Grammar School of Ľudovít Štúr}{}{Zvolen, Slovakia}{}{
+				       final exams: English B2, informatics, mathematics, Slovak language and literature\newline{}
+					class specialization: informatics}
+
+\nocite{*}
+\printbibliography[title={Publications}]
+
+\section{Work experience}
+\cventry{2012--now}{Centre for Research on Cryptography and Security}{}{Masaryk University, Brno}{}{
+                    \href{https://github.com/crocs-muni/EACirc/}{\textit{EACirc: Automatic genetically-inspired problem solver}} (developer, team lead)}
+\cventry{2011--now}{Faculty of Informatics}{}{Masaryk University, Brno}{}{
+                    \textit{IB016 Seminar on Functional Programming} (seminar tutor, spring 2015--now)\newline{}
+                    \textit{IB015 Non-inperative Programming} (seminar tutor, spring 2012--now)\newline{}
+                    \textit{IB102 Automata, Grammars, and Complexity} (homework creation, autumn 2013)\newline{}
+                    \textit{IB002 Algorithms and Data Structures I} (seminar tutor, spring 2013)}
+\cventry{2010--now}{Wachumba ck, s.\ r.\ o.}{}{Martin, Slovakia}{}{leader in summer camps for children}
+
+\section{Software development}
+\cventry{Software}{EACirc}{Automatic problem solver based on genetic programming}{}{}{3.5 years of development (bachelor and master thesis)\newline{}Used technologies: GALib, TinyXML, CATCH, BOINC, git, GitHub, Travis-CI}
+\cventry{Active usage}{C\texttt{++}}{Git, Bash, Haskell, \LaTeX}{}{}{}
+\cventry{Passive}{C}{Scala, Java}{}{}{}
+
+\section{Other experience}
+\cventry{2015--now}{Nordic Animals association}{Masaryk University}{}{}{chairman of the university student association}
+\cventry{2015--now}{Instruktoři Brno, z.\ s.}{}{}{}{member of the association for outdoor learning by experience}
+\cventry{spring 2014}{Norwegian University of Science and Technology}{}{Trondheim, Norway}{}{Erasmus stay for one semester}
+\cventry{2009--2013}{TED Open Translation Project}{}{}{}{translating subtitles for TED Talks \small{(volunteer activity)}}
+
+\section{Language skills}
+\cvlanguage{Slovak}{native language}{}
+\cvlanguage{English}{fluent (B2-C1)}{}
+\cvlanguage{German}{intermediate (B1-B2)}{not actively used}
+\cvlanguage{Norwegian}{beginner (A2)}{not actively used}
+
+%\section{Other skills and qualifications}
+%\cvline{computing}{programming (C, C++, Haskell), graphics software, git, \LaTeX~typesetting system,\ldots}
+
+\end{document}
