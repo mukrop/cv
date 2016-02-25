@@ -1,0 +1,17 @@
+# TeX intermediate files
+*.aux
+*.dvi
+*.log
+*.synctex.gz
+*.out
+*.nav
+*.toc
+*.snm
+*.run.xml
+*-blx.bib
+*.bbl
+*.blg
+*.bcf
+
+# compiled PDF
+*.pdf
