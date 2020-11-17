@@ -1,12 +1,16 @@
-all: cv.pdf
+TEXS=$(wildcard *.tex)
+PDFS=$(TEXS:.tex=.pdf)
+
+all: $(PDFS) clean
 
 clean:
-	rm -f *.aux *.dvi *.log *.synctex.gz *.out *.nav *.toc *.snm *.run.xml *-blx.bib *.bbl *.blg *.bcf
+	rm -f *.aux *.dvi *.log *.synctex.gz *.out *.nav *.toc *.snm *.run.xml *-blx.bib *.bbl *.blg *.bcf *.fls *.fdb_latexmk
 
-cv.pdf: cv.bib force
-	pdflatex cv
-	biber cv
-	pdflatex cv
-	pdflatex cv
+%.pdf : %.tex cv.bib
+	pdflatex $<
+	biber $(basename $<)
+	pdflatex $<
+	pdflatex $<
 
-force: ;
+.PHONY: all clean
+

@@ -11,7 +11,7 @@
 % moderncv themes
 %\moderncvtheme[blue]{casual}                  % optional argument are 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
 \moderncvstyle{classic}
-\moderncvcolor{blue}
+\moderncvcolor{burgundy}
 
 % character encoding
 \usepackage[utf8]{inputenc}                   % replace by the encoding you are using
@@ -30,23 +30,9 @@
 % personal data
 \firstname{Martin}
 \familyname{Ukrop}
-\title{
-% usable security researcher \vspace{1em}\newline
-\normalsize \textit{\enquote{Not everything that can be counted counts.\newline{} Not everything that counts can be counted.}\newline{} \scriptsize (William Bruce Cameron)}
-}               % optional, remove the line if not wanted
-%\address{Novozámocká 63}{960 01 Zvolen, Slovakia}    % optional, remove the line if not wanted
-%\mobile{+421 908 222 224}                    % optional, remove the line if not wanted
-%\mobile{+420 776 659 464}                    % optional, remove the line if not wanted
-%\phone{phone (optional)}                      % optional, remove the line if not wanted
-%\email{mukrop@mail.muni.cz}                % optional, remove the line if not wanted
-%\extrainfo{GitHub: \href{https://github.com/mathius}{mathius}\\
-%ORCID: \href{http://orcid.org/0000-0001-8110-8926}{0000-0001-8110-8926}\\
-%IS MU: \href{http://is.muni.cz/person/374297}{374297}}
-%\fax{fax (optional)}                          % optional, remove the line if not wanted
-%\homepage{Homepage: \href{https://crocs.fi.muni.cz/people/mukrop}{crocs.fi.muni.cz/people/mukrop}}                % optional, remove the line if not wanted
-%\extrainfo{additional information (optional)} % optional, remove the line if not wanted
-\photo[100pt][1pt]{profile_photo}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
-%\quote{``Not everything that can be counted counts.\newline{} Not everything that counts can be counted.''\newline{} \scriptsize (William Bruce Cameron)}
+\title{researcher \& educator}               % optional, remove the line if not wanted
+\photo[120pt][2pt]{profile_faktaoklimatu}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{\enquote{Not everything that can be counted counts.\newline{} Not everything that counts can be counted.}\newline{} \scriptsize (William Bruce Cameron)}
 
 \usepackage[
     backend=biber,      % use biber as backend instead of BiBTeX
@@ -89,57 +75,50 @@
 			]{hyperref}
 
 \begin{document}
-\fancyfoot[c]{\textit{\color{gray}Page \thepage{} of \pageref{LastPage}}}
+\fancyfoot[c]{\textit{\color{gray}Page \thepage{} of \pageref*{LastPage}}}
 \maketitle
 
 \vspace{-2em}
-
-\section{Study information}
-\cventry{Advisor}{prof. RNDr. Václav Matyáš, M.Sc., Ph.D.}{}{}{}{}
-\cventry{Study field}{FI PST Computer Systems and Technologies}{entering the 9th semester}{}{}{}
-%\cventry{Plans}{Dissertation expected in the 10th semester}{}{}{}{}
-
-\iffalse
-
 \section{Personal information}
-\cventry{Born}{21. 7. 1991}{Zvolen, Slovakia}{}{}{}
-\cventry{Contact}{\href{mailto:mukrop@mail.muni.cz}{mukrop@mail.muni.cz}}{+420 776 659 464}{}{}{}
-\cventry{Profile}{\href{https://crocs.fi.muni.cz/people/mukrop}{crocs.fi.muni.cz/people/mukrop}}{}{}{}{}
-\cventry{Language skills}{Slovak (native), English (fluent B2-C1)}{}{}{}{Czech (almost fluent), German (passive intermediate B1-B2), Norwegian (passive beginner A2)}
+\cventry{Contact}{\href{mailto:martin.ukrop@faktaoklimatu.cz}{martin.ukrop@faktaoklimatu.cz}}{}{}{\href{mailto:mukrop@mail.muni.cz}{mukrop@mail.muni.cz}}{LinkedIn: \href{https://www.linkedin.com/in/mukrop/}{www.linkedin.com/in/mukrop}}
+\cventry{Research profile}{\href{https://crocs.fi.muni.cz/people/mukrop}{crocs.fi.muni.cz/people/mukrop}}{}{}{}{ORCID: \href{http://orcid.org/0000-0001-8110-8926}{0000-0001-8110-8926}}
+\cventry{Language skills}{Slovak (native), English (active fluent), Czech (active almost fluent)}{}{}{}{German (passive intermediate B1-B2), Norwegian (passive beginner A2)}
 
 \section{Research and work experience}
+\cventry{2019--now}{Educating and improving the debate on climate change}{}{\href{https://faktaoklimatu.cz/}{Fakta o klimatu}}{}{co-founter of the project, managerial board member}
 \cventry{2016--now}{Usable security research of cryptographic interfaces}{}{Centre for Research on Cryptography and Security, Masaryk University, Brno}{}{}
-\cventry{spring 2016}{Internship at Red Hat Inc., Brno}{}{}{}{
-                    implementing name constraints and tests for GnuTLS and NSS}
+\cventry{spring 2016}{Internship at Red Hat Inc., Brno}{}{}{}{implementing name constraints and tests for GnuTLS and NSS}
 \cventry{2012--2016}{Evaluation of randomness in context of security}{}{Centre for Research on Cryptography and Security, Masaryk University, Brno}{}{
                     developing \href{https://github.com/crocs-muni/EACirc/}{\textit{EACirc}}, an automatic genetically-inspired problem solver}
 
 \section{Education}
-\cventry{2016--now}{Masaryk University}{}{Brno, Czech Republic}{}{doctodal degree programme: Field of study: Computer Systems and Technologies\newline{}proposed dissertation topis: Usability in cryptographiv interfaces}
+\cventry{2016--now}{Masaryk University}{}{Brno, Czech Republic}{}{doctoral degree programme: Computer systems and technologies\newline{}proposed dissertation topic: Usable certificate validation}
+\cventry{2015--2016}{Instruktoři Brno, z.\ s.}{}{Czech Republic}{}{year-long comprehensive course on experiential learning}
 \cventry{2013--2016}{Masaryk University}{}{Brno, Czech Republic}{}{master's degree programme: Information Technology Security\newline{}thesis: \href{http://is.muni.cz/th/374297/fi_m/?lang=en;id=239511}{\textit{Randomness analysis on authenticated encryption systems}}\newline{}Dean’s Award for final thesis and excellent academic performance}
 \cventry{spring 2014}{Norwegian University of Science and Technology}{}{Trondheim, Norway}{}{semestral Erasmus exchange programme}
 \cventry{2010--2013}{Masaryk University}{}{Brno, Czech Republic}{}{bachelor's degree programme: Computer Systems and Data Processing\newline{}thesis: \href{http://is.muni.cz/th/374297/fi_b/?lang=en;id=239511}{\textit{Usage of evolvable circuit for statistical testing of randomness}}\newline{}Dean’s Award for excellent academic performance}
 
-\section{Other experience}
-\cventry{2015--now}{Nordic Animals association}{Masaryk University}{}{}{chairman of the university student association}
+\newpage
+\section{Volunteer experience}
+\cventry{2017--now}{Instruktoři Brno, z.\ s.}{}{Czech Republic}{}{volunteer in the association for experiential learning}
+\cventry{2015--2019}{Nordic Animals association}{Masaryk University}{}{}{chairman of the university student association}
 \cventry{2009--2013}{TED Open Translation Project}{}{}{}{translating subtitles for TED Talks \small{(volunteer activity)}}
 
 \section{Teaching and supervision}
+\cventry{2017--now}{Teaching lab}{}{Faculty of Informatics, Masaryk University, Brno}{}{designer and main lecturer of the initiative to improve teaching}
+\cventry{2015--now}{Instruktoři Brno, z.\ s.}{}{Czech Republic}{}{lecturer of group dynamics, reflection and program design in experiential learning, consultant of event dramaturgy}
 \cventry{2011--now}{Faculty of Informatics}{}{Masaryk University, Brno}{}{
-                    supervision: 4 bachelor theses and consultant on 2 master theses\newline{}
-                    \textit{Teaching Lab} (lecturer and seminar tutor, autumn 2017--now)\newline{}
+                    supervision of 6 bachelor/master (consultant of 3 more)\newline{}
+                    \textit{Introduction to PhD study} (lecturer, 2019--now)\newline{}
                     \textit{Secure coding principles and practices} (seminar tutor, autumn 2016--now)\newline{}
                     \textit{Laboratory of security and applied cryptography} (seminar tutor, autumn 2016--now)\newline{}
-                    \textit{Seminar on Functional Programming} (lecturer and seminar tutor, spring 2015--now)\newline{}
-                    \textit{Non-inperative Programming} (seminar tutor, spring 2012--now)\newline{}
+                    \textit{Seminar on Functional Programming} (lecturer and seminar tutor, spring 2015--2019)\newline{}
+                    \textit{Non-imperative Programming} (seminar tutor, spring 2012--2016)\newline{}
                     \textit{Automata, Grammars, and Complexity} (homework creation, autumn 2013)\newline{}
                     \textit{Algorithms and Data Structures I} (seminar tutor, spring 2013)}
-\cventry{2015--now}{Instruktoři Brno, z.\ s.}{}{}{}{active member of the association for experiential learning}
 \cventry{2010--2016}{Wachumba ck, s.\ r.\ o.}{}{Martin, Slovakia}{}{leader in summer camps for children}
 
-\fi
-
 \nocite{*}
-\printbibliography[title={Publications}]
+\printbibliography[title={Research publications}]
 
 \end{document}
