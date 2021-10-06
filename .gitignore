@@ -12,6 +12,8 @@
 *.bbl
 *.blg
 *.bcf
+*.fls
+*.fdb_latexmk
 
 # compiled PDF
 *.pdf

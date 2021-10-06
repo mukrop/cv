@@ -1,0 +1,131 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2011 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,roman]{moderncv}
+
+% moderncv themes
+%\moderncvtheme[blue]{casual}                  % optional argument are 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+\moderncvstyle{classic}
+\moderncvcolor{burgundy}
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+\usepackage{amssymb,amsmath}
+
+\usepackage{csquotes}
+\usepackage{microtype}
+\usepackage{lastpage}
+
+% adjust the page margins
+\usepackage[top=1.8cm, bottom=2.5cm, left=1.8cm, right=1.8cm]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}			 % if you want to change the width of the column with the dates
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+%\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% personal data
+\firstname{Martin}
+\familyname{Ukrop}
+\title{Researcher, educator, volunteer}               % optional, remove the line if not wanted
+\photo[120pt][2pt]{profile_faktaoklimatu}                  % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{\enquote{Not everything that can be counted counts.\newline{} Not everything that counts can be counted.}\newline{} \scriptsize (William Bruce Cameron)}
+
+\usepackage[
+    backend=biber,      % use biber as backend instead of BiBTeX
+    style=authoryear,sorting=ydnt,
+	url=true,           % display urls in bibliography
+	hyperref=auto,      % detect hyperref and create links
+    giveninits=true,    % abbreviate first names to initials
+    maxcitenames=10,    % maxiumim number of authors before making 'et al.' for fullcite
+    maxbibnames=10,     % maxiumim number of authors before making 'et al.' for bibliography
+    alldates=edtf,   % set date format to ISO 8601
+]{biblatex}
+\addbibresource{cv.bib}
+
+\renewbibmacro*{date}{}
+\renewbibmacro*{date+extrayear}{}
+\renewbibmacro*{issue+date}{}
+\newcommand*{\bibyear}{}
+
+\defbibenvironment{bibliography}
+  {\list
+     {\iffieldequals{year}{\bibyear}
+        {}
+        {\printfield{year}%
+         \savefield{year}{\bibyear}}}
+     {\setlength{\topsep}{0pt}% layout parameters based on moderncvstyleclassic.sty
+      \setlength{\labelwidth}{\hintscolumnwidth}%
+      \setlength{\labelsep}{\separatorcolumnwidth}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \leftmargin\labelwidth%
+      \advance\leftmargin\labelsep}%
+      \sloppy\clubpenalty4000\widowpenalty4000}
+  {\endlist}
+  {\item}
+
+\usepackage[plainpages=false,   % get the page numbering correctly
+            pdfpagelabels,      % write arabic labels to all pages
+            unicode,           	% allow unicode characters in links
+            colorlinks=false,    % use colored links instead of boxed
+            linkcolor={color1},
+            urlcolor={color1}
+			]{hyperref}
+
+\begin{document}
+\fancyfoot[c]{\textit{\color{gray}Page \thepage{} of \pageref*{LastPage}}}
+\maketitle
+
+\vspace{-2em}
+\section{Contact information}
+\cventry{}{\href{mailto:mukrop@mail.muni.cz}{mukrop@mail.muni.cz}}{}{}{\href{mailto:mukrop@redhat.com}{mukrop@redhat.com}}{Reachable by phone at +420 776 659 464, but email communication is preferred.}
+%\cventry{Profiles}{}{Web: \href{https://crocs.fi.muni.cz/people/mukrop}{crocs.fi.muni.cz/people/mukrop}}{}{}{\textbf{GitHub:} \href{https://github.com/mukrop}{github.com/mukrop}\\\textbf{LinkedIn:} \href{https://www.linkedin.com/in/mukrop/}{www.linkedin.com/in/mukrop}\\\textbf{ORCID:} \href{http://orcid.org/0000-0001-8110-8926}{0000-0001-8110-8926}}
+
+\section{Education}
+\cventry{2016--now}{Doctoral degree (in progress)}{Masaryk University}{Czech Republic}{}{Topic: Assisting IT professionals in TLS certificate validation and computer science education}
+\cventry{summer 2016}{Programming internship}{Red Hat Inc.}{Czech Republic}{}{Topic: Implementing name constraints and tests for GnuTLS and NSS}
+\cventry{2013--2016}{Master's degree}{Masaryk University}{Czech Republic}{}{Thesis: \href{http://is.muni.cz/th/374297/fi_m/?lang=en;id=239511}{\textit{Randomness analysis on authenticated encryption systems}}\newline{}Dean’s Award for final thesis and excellent academic performance}
+\cventry{2015--2016}{Experiential learning instructor}{Instruktoři Brno, z.\ s.}{Czech Republic}{}{A Year-long comprehensive educational program on experiential learning}
+\cventry{spring 2014}{Erasmus exchange study}{Norwegian University of Science and Technology}{Norway}{}{}
+\cventry{2010--2013}{Bachelor's degree}{Masaryk University}{Czech Republic}{}{Thesis: \href{http://is.muni.cz/th/374297/fi_b/?lang=en;id=239511}{\textit{Usage of evolvable circuit for statistical testing of randomness}}\newline{}Dean’s Award for excellent academic performance}
+\cventry{Language skills}{Slovak (native), English (active fluent), Czech (active, almost fluent)}{}{}{}{German (passive intermediate B1-B2), Norwegian (passive beginner A2)}
+
+\section{I'm a researcher in usable security.}
+\cventry{2016--now}{Usable security towards IT professionals}{Centre for Research on Cryptography and Security}{Masaryk University, Czech Republic}{}{Focus: Usability of validating X.509 certificates, see \href{https://x509errors.org/}{x509errors.org}}
+\cventry{2012--2016}{Evaluation of randomness in context of security}{Centre for Research on Cryptography and Security}{Masaryk University, Czech Republic}{}{Focus: Developing \href{https://github.com/crocs-muni/EACirc/}{\textit{EACirc}}, an automatic genetically-inspired problem solver}
+
+\section{I'm devoted to sharing gained knowledge.}
+\cventry{2011--now}{Thesis supervision and teaching}{Masaryk University}{Czech Republic}{}{
+    Supervision: Eight bachelor/master theses (consultant of three more)\newline{}
+    Course: \textit{Introduction to Ph.D. study} (lecturer, 2019--now)\newline{}
+    Course: \textit{Secure coding principles and practices} (seminar tutor, autumn 2016--2021)\newline{}
+    Course: \textit{Laboratory of security and applied cryptography} (seminar tutor, autumn 2016--2020)\newline{}
+    Course: \textit{Seminar on Functional Programming} (lecturer and seminar tutor, spring 2015--2019)\newline{}
+    Course: \textit{Non-imperative Programming} (seminar tutor, spring 2012--2016)\newline{}
+    Course: \textit{Automata, Grammars, and Complexity} (homework creation, autumn 2013)\newline{}
+    Course: \textit{Algorithms and Data Structures I} (seminar tutor, spring 2013)}
+\cventry{2017--now}{Teaching Lab initiative}{Masaryk University}{Czech Republic}{}{Role: Initiative leader, co-designer of the course, core lecturer\\Focus: Help student teaching assistants at the Faculty of informatics be better teachers, improve the teaching environment}
+\cventry{2017--now}{Teaching experiential learning}{Instruktoři Brno, z.\ s.}{Czech Republic}{}{Role: Lecturer and mentor, in 2017--2018 co-leader of the year-long educational program\\Focus: Activity design and execution, reflection, group dynamics, event dramaturgy}
+\cventry{2010--2016}{Children summer camp leader}{Wachumba ck, s.\ r.\ o.}{Slovakia}{}{}
+
+\section{I actively volunteer to improve the world, one bit at a time.}
+\cventry{2019--now}{Introducing students to open source}{Masaryk University}{Czech Republic}{}{Role: Creator and coordinator of the \href{https://github.com/crocs-muni/open-source-development-course}{Open Source Development Course}\\Focus: Support students in contributing to OSS, bring hosted lectures from the industry to the university}
+\cventry{2019--now}{Improving the debate on climate change}{\href{https://faktaoklimatu.cz/}{Fakta o klimatu}}{Czech Republic}{}{Role: Project co-founder, member of the managerial board, IT developer and administrator}
+\cventry{2018--now}{Delivering IT community talks}{}{}{}{DevConf.CZ 2018--2021, OpenAlt 2020, Red Hat Research Day Europe 2020 and others}
+\cventry{2017--now}{Support for experiential learning events}{Instruktoři Brno, z.\ s.}{Czech Republic}{}{Role: IT support and administration}
+\cventry{2012--now}{Keeping things open source}{}{}{}{GitHub profile: \href{https://github.com/mukrop}{github.com/mukrop}}
+\cventry{2015--2019}{Support activities of university students}{Friends of Nordic Animals Association}{Masaryk University}{}{Role: Chairman of the university student club\\Focus: Online and offline puzzle games for secondary school students, informal university events}
+\cventry{2009--2013}{Translating subtitles for TED talks}{TED Open Translation Project}{worldwide}{}{}
+
+\section{Selected publications}
+\cventry{Grasping X.509 errors}{\small\normalfont\fullcite{2020-dtrap-ukrop}}{}{}{}{}
+\cventry{Usability\\of X.509 certificates}{\small\normalfont\fullcite{2018-rsa-ukrop}}{}{}{}{}
+\cventry{Challenges\\of novice teachers}{\small\normalfont\fullcite{2021-iticse-riese}}{}{}{}{}
+\cventry{Teacher's reflective diary}{\small\normalfont\fullcite{2019-sigcse-ukrop}}{}{}{}{}
+\cventry{Beta testers vs.\ regular users}{\small\normalfont\fullcite{2018-cacm-stavova}}{}{}{}{}
+\cventry{Randomness analysis}{\small\normalfont\fullcite{2014-secrypt-sys}}{}{}{}{}
+
+\end{document}
